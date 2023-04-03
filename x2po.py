@@ -31,21 +31,27 @@ def x2po(xlsx_file, po_file):
             )
             po.append(entry)
 
-    # def format_multiline_entry(text):
+    
+    def format_multiline_entry(text):
+
+    ## The previous method that use `replace()` call function 
+
     #     lines = text.split('\n')
     #     if len(lines) > 1:
     #         return '""\n' + '\n'.join('"{}\\n"'.format(line.rstrip().replace('"', '\\"').replace('\t', '\\t')) for line in lines[:-1]) + '\n"{}"'.format(lines[-1].rstrip().replace('"', '\\"').replace('\t', '\\t'))
     #     else:
     #         return '"{}"'.format(text.rstrip('\n').replace('"', '\\"').replace('\t', '\\t'))
 
-    def format_multiline_entry(text):
+        """ 
+        # the optimized version of the code using string.replace() method instead of chaining multiple replace() calls, the replace() method is called only once on the input string before splitting it into lines. This avoids chaining multiple replace() calls on each line of the input string, which can improve the performance.
+        """
+
+        text = text.replace('\\', '\\\\').replace('"', '\\"').replace('\t', '\\t')
         lines = text.split('\n')
         if len(lines) > 1:
-            return '""\n' + '\n'.join('"{}\\n"'.format(line.replace('\\', '\\\\').replace('"', '\\"').replace('\t', '\\t')) for line in lines[:-1]) + '\n"{}"'.format(lines[-1].replace('\\', '\\\\').replace('"', '\\"').replace('\t', '\\t'))
+            return '""\n' + '\n'.join('"{}\\n"'.format(line) for line in lines[:-1]) + '\n"{}"'.format(lines[-1])
         else:
-            return '"{}"'.format(text.replace('\\', '\\\\').replace('"', '\\"').replace('\t', '\\t'))
-
-
+            return '"{}"'.format(text)
 
     with open(po_file, 'w', encoding='utf-8') as f:
         # Write metadata
