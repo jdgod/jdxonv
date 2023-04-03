@@ -1,16 +1,14 @@
-# jdxonv
+# jdxonv.py
 The converter between .PO (Portable Object) and .XLSX/XLS (Microsoft Excel)
 
 ```
 This script converts files between .PO and .XLSX formats using po2x and x2po functions.
 
-Functions:
-    - get_output_filename: Generates an output filename with the prefix 'jd' and a two-digit index.
-    - main: Converts the input file to the specified output format.
+Command-line arguments:
+- input: the input file (.PO or .XLSX)
+- output (optional): the output file (.PO or .XLSX). If not provided, the output filename will be generated using get_output_filename.
 
-Arguments:
-    - input: Path to the input file (.PO or .XLSX).
-    - output: Path to the output file (.PO or .XLSX).
+Supported input file formats: .PO and .XLSX.
 
 Example usage:
     - To convert a .PO file to .XLSX: python jdxonv.py input.po
