@@ -1,7 +1,7 @@
 # jdxonv
 The converter between .PO (Portable Object) and .XLSX/XLS (Microsoft Excel)
 
-"""
+```
 This script converts files between .PO and .XLSX formats using po2x and x2po functions.
 
 Functions:
@@ -19,4 +19,4 @@ Example usage:
 
 Note: If the output file path is not specified, the script generates a filename using the 'jd' prefix and a two-digit index.
 
-"""
+```
