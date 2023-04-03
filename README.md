@@ -6,7 +6,7 @@ This script converts files between .PO and .XLSX formats using po2x and x2po fun
 
 Command-line arguments:
 - input: the input file (.PO or .XLSX)
-- output (optional): the output file (.PO or .XLSX). If not provided, the output filename will be generated using get_output_filename.
+- output (optional): `-o ` the output file (.PO or .XLSX)
 
 Supported input file formats: .PO and .XLSX.
 
