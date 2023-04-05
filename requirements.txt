@@ -1,0 +1,3 @@
+setuptools_scm
+openpyxl==3.0.10
+polib==1.2.0
