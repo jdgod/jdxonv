@@ -7,7 +7,6 @@ from x2po import x2po
 
 # Define a function to generate an output file name based on the input file name and path
 def get_output_filename(input_path, ext):
-
     """
     # This function takes an input path and an extension as arguments
     # It extracts the input filename stem, output directory and prefix
